@@ -170,6 +170,23 @@ loot = loot_options.pop(lootRoll - 1)
 belt.append(loot)
 print("Your belt: ", belt)
 
+# Lab 04 - Q7 Sort the belt
+print("You got the loots, so organize your belt alphabetically: ")
+belt.sort()
+print("Your belt: ", belt)
+
+# Lab 04 - Q8 Use the belt
+print("You see a Monster in the distance! Quickly! Use your first item!")
+first_item = belt.pop(0)
+if first_item in good_loot_options:
+    health_points = min(6, (health_points + 2))
+    print(f"You used the {first_item} and increased your health points to {health_points}")
+elif first_item in bad_loot_options:
+    health_points = max(0, (health_points - 2)) 
+    print(f"You used the {first_item} and decreased your health points to {health_points}")
+else:
+    print(f"You used the {first_item} and did nothing helpful")
+
 input("Analyze the roll (Press enter)")
 # Compare Player vs Monster's strength
 print("--- You are matched in strength: " + str(combat_strength == m_combat_strength))
